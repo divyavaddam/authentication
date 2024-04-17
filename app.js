@@ -65,7 +65,6 @@ app.post("/login", async (request, response) => {
   } else {
     const isPasswordMatched = await bcrypt.compare(password, user.password);
     if (isPasswordMatched === true) {
-      response.status(200);
       response.send("Login Success!");
     } else {
       response.status(400);
